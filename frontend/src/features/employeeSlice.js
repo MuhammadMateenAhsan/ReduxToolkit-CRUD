@@ -103,10 +103,10 @@ export const updateEmployee = createAsyncThunk("updateEmployee" , async(data , {
             },
 
             [deleteEmployee.fulfilled] : (state,action) =>{
-                state.loading = true;
+                state.loading = false;
                 const {_id} = action.payload;
                 if(_id){
-                    state.employees = state.employees.filter((data)=> data.id !== _id);
+                    state.employees = state.employees.filter((data)=> data._id !== _id);
                     console.log(state.employees )
                 }
             },

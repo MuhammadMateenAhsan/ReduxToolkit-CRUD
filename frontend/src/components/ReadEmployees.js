@@ -16,7 +16,7 @@ const ReadEmployees = () => {
   // }
   return (
     <>
-      <h2 className="text-center">'Employees data length is = '</h2>
+      <h2 className="text-center">'Employees data length is = {employees.length}'</h2>
       <table className="table table-bordered">
         <thead>
           <th>id</th>

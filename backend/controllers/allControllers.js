@@ -1,4 +1,7 @@
 const employeeModel=require('../models/employeeModel')
+const multer = require('multer');
+
+const upload = multer({ dest: 'images/' })
 
 // function start to POST data to DB
 const addemployee = async(req,res)=>{
@@ -7,7 +10,8 @@ const addemployee = async(req,res)=>{
         const data=await employee.save()
         res.json(data)
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        res.status(500).json({ error: 'Internal server error' });
     }
 }
 // function end to POST data to DB
